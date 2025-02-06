@@ -27,7 +27,6 @@ jobs:
           password: ${{secrets.SSH_PASSWORD}}
           port: ${{ secrets.REMOTE_PORT }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
-          script_stop: true
           script: |
             cd domains/templatesee.com/public_html/dev
             cd public_html
@@ -41,6 +40,3 @@ jobs:
             php -r "unlink('composer.phar');"
             php artisan optimize
             php artisan migrate
-
-
-            
